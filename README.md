@@ -8,7 +8,7 @@ for me and jp-lang reader.
 2. `github-actions-demo.yml` を `.github/workflows` ディレクトリ内に作成
 3. `github-actions-demo.yml` に以下の内容を記述
 
-```YAML
+```yaml{:copy}
 name: GitHub Actions Demo
 on: [push]
 jobs:
