@@ -4,9 +4,13 @@
 ## Understanding GitHub Actions
 
 [1. Overview　概要](https://github.com/tyamagis/github_actions_tutorial/edit/main/00_Learn_GitHub_Actions/Understanding_GitHub_Actions.md#1-overview%E6%A6%82%E8%A6%81)
+
 [2. The components of GitHub Actions　GitHub Actions の構成要素](https://github.com/tyamagis/github_actions_tutorial/edit/main/00_Learn_GitHub_Actions/Understanding_GitHub_Actions.md#2-the-components-of-github-actionsgithub-actions-%E3%81%AE%E6%A7%8B%E6%88%90%E8%A6%81%E7%B4%A0-1)
+
 [3. Create an example workflow　ワークフロー例の作成](https://github.com/tyamagis/github_actions_tutorial/edit/main/00_Learn_GitHub_Actions/Understanding_GitHub_Actions.md#3-create-an-example-workflow%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E4%BE%8B%E3%81%AE%E4%BD%9C%E6%88%90-1)
+
 [4. Understanding the workflow file　ワークフローのファイルを理解する](https://github.com/tyamagis/github_actions_tutorial/edit/main/00_Learn_GitHub_Actions/Understanding_GitHub_Actions.md#4-understanding-the-workflow-file%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B-1)
+
 [5. Viewing the activity for a workflow run　ワークフロー実行を確認する](https://github.com/tyamagis/github_actions_tutorial/edit/main/00_Learn_GitHub_Actions/Understanding_GitHub_Actions.md#5-viewing-the-activity-for-a-workflow-run%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B)
 
 
@@ -14,9 +18,7 @@
 
 GitHub Actionsは、ビルド、テスト、デプロイのパイプラインを自動化するための継続的インテグレーションと継続的デリバリー（CI/CD）プラットフォームです。リポジトリへのプルリクエストごとにビルドとテストを行う**ワークフロー**を作成したり、マージされたプルリクエストを本番環境にデプロイしたりすることができます。
 
-<sub>
-CI ... Continuous Integration（継続的インテグレーション）, CD ... Continuous Delivery（継続的デリバリー）
-</sub>
+<sub>※　CI ... Continuous Integration（継続的インテグレーション）, CD ... Continuous Delivery（継続的デリバリー）</sub>
 
 GitHub Actions は、単なる DevOps にとどまらず、リポジトリで他のイベントが発生したときに**ワークフロー**を実行することができます。例えば、誰かがリポジトリに新しい課題を作成すると、自動的に適切なラベルを追加する**ワークフロー**を実行することができます。
 
@@ -42,7 +44,7 @@ GitHub Actions の**ワークフロー**は、プルリクエストがオープ�
 
 #### 2-2. Events イベント
 
-**イベント**とは、**ワークフロー**を実行するきっかけとなる、リポジトリ内の特定の活動のことです。たとえば、誰かがプルリクエストを作成したり、課題を開いたり、リポジトリにコミットをプッシュしたりすると、GitHub からアクティビティが発生することがあります。また、スケジュールや REST API への投稿、手動でワークフローの実行をトリガーすることもできます。
+**イベント**とは、**ワークフロー**を実行するきっかけとなる、リポジトリ内の特定の活動のことです。たとえば、誰かがプルリクエストを作成したり、課題を開いたり、リポジトリにコミットをプッシュしたりすると、GitHub からアクティビティが発生することがあります。また、スケジュールや [REST API への投稿](https://docs.github.com/en/rest/reference/repos#create-a-repository-dispatch-event)、手動でワークフローの実行をトリガーすることもできます。
 
 ワークフローのトリガーとなるイベントの一覧は、[Events that trigger workflows - GitHub Docs](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)を参照ください。
 
@@ -52,7 +54,7 @@ GitHub Actions の**ワークフロー**は、プルリクエストがオープ�
 
 ジョブは他のジョブとの依存関係を設定できます。デフォルトでは、ジョブは依存関係を持たず、互いに並行して実行されます。あるジョブが他のジョブに依存する場合、そのジョブは依存するジョブの完了を待って実行されます。たとえば、依存関係のない異なるアーキテクチャの複数のビルドジョブと、それらのジョブに依存するパッケージングジョブがあるとします。ビルドジョブは並行して実行され、それらがすべて正常に完了すると、パッケージングジョブが実行されます。
 
-ジョブの詳細については、"ジョブの使用 "を参照してください。
+ジョブの詳細については、[ジョブの使用](https://docs.github.com/en/actions/using-jobs)を参照してください。
 
 #### 2-4. Actions アクション
 
@@ -60,11 +62,11 @@ GitHub Actions の**ワークフロー**は、プルリクエストがオープ�
 
 自分でアクションを作成することもできますし、GitHub Marketplace でワークフローで使用するアクションを見つけることもできます。
 
-詳しくは、"アクションの作成" をご覧ください。
+詳しくは、[アクションの作成](https://docs.github.com/en/actions/creating-actions) をご覧ください。
 
 #### 2-5. Runnnes ランナー
 
-ランナーとは、ワークフローがトリガーされたときに実行するサーバーのことです。各ランナーは、一度に一つのジョブを実行することができます。GitHub は、ワークフローを実行するための Ubuntu Linux、Microsoft Windows、macOS ランナーを提供しています。各ワークフローの実行は、新しくプロビジョニングされた仮想マシンで行われます。別のオペレーティングシステムが必要な場合や、特定のハードウェア構成が必要な場合は、独自のランナーをホストすることができます。自前ランナーの詳細については、"自前ランナーのホスティング "を参照してください。
+ランナーとは、ワークフローがトリガーされたときに実行するサーバーのことです。各ランナーは、一度に一つのジョブを実行することができます。GitHub は、ワークフローを実行するための Ubuntu Linux、Microsoft Windows、macOS ランナーを提供しています。各ワークフローの実行は、新しくプロビジョニングされた仮想マシンで行われます。別のオペレーティングシステムが必要な場合や、特定のハードウェア構成が必要な場合は、独自のランナーをホストすることができます。独自のランナーの詳細については、[独自のランナーのホスティング](https://docs.github.com/en/actions/hosting-your-own-runners)を参照してください。
 
 ## 3. Create an example workflow　ワークフロー例の作成
 
@@ -93,9 +95,7 @@ jobs:
 
 3-3. これらの変更をコミットして GitHub リポジトリにプッシュします。
 
-これで GitHub Actions のワークフローファイルがリポジトリにインストールされ、誰かがリポジトリに変更をプッシュするたびに自動的に実行されるようになりました。ワークフローの実行履歴の詳細を見るには、"Viewing the activity for a workflow run" を参照ください。
-
-www.DeepL.com/Translator（無料版）で翻訳しました。
+これで GitHub Actions のワークフローファイルがリポジトリにインストールされ、誰かがリポジトリに変更をプッシュするたびに自動的に実行されるようになりました。ワークフローの実行履歴の詳細を見るには、[Viewing the activity for a workflow run](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#viewing-the-activity-for-a-workflow-run) を参照ください。
 
 ## 4. Understanding the workflow file　ワークフローのファイルを理解する
 
@@ -107,7 +107,7 @@ name: learn-github-actions
 ```yaml
 on: [push]
 ```
-このワークフローのトリガーを指定します。この例では push イベントを使用しています。誰かがリポジトリに変更をプッシュしたりプルリクエストをマージしたりするたびに、ワークフローの実行がトリガーされることになります。これは、すべてのブランチへのプッシュがトリガーとなります。特定のブランチやパス、タグへのプッシュのときだけ実行する構文の例については、"GitHub Actions のワークフロー構文" を参照ください。
+このワークフローのトリガーを指定します。この例では push イベントを使用しています。誰かがリポジトリに変更をプッシュしたりプルリクエストをマージしたりするたびに、ワークフローの実行がトリガーされることになります。これは、すべてのブランチへのプッシュがトリガーとなります。特定のブランチやパス、タグへのプッシュのときだけ実行する構文の例については、[GitHub Actions のワークフロー構文](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore) を参照ください。
 
 ```yaml
 jobs:
@@ -122,7 +122,7 @@ check-bats-version という名前のジョブを定義します。子キーで�
 ```yaml
     runs-on: ubuntu-latest
 ```
-最新版のUbuntu Linuxランナーで実行されるようにジョブを設定します。これは、GitHub がホストする新しい仮想マシン上でジョブが実行されることを意味します。他のランナーを使った構文の例については、"GitHub Actions のワークフロー構文" を参照してください。
+最新版のUbuntu Linuxランナーで実行されるようにジョブを設定します。これは、GitHub がホストする新しい仮想マシン上でジョブが実行されることを意味します。他のランナーを使った構文の例については、[GitHub Actions のワークフロー構文](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on) を参照してください。
 
 ```yaml
     steps:
@@ -153,7 +153,7 @@ runキーワードは、ランナー上でコマンドを実行するようジ�
 
 #### 4-1. Visualizing the workflow file ワークフローファイルを可視化する
 
-この図では、先ほど作成したワークフローファイルと GitHub Actions のコンポーネントがどのように階層化されているのかを確認できます。各ステップは、ひとつのアクションあるいはシェルスクリプトを実行します。ステップ 1 と 2 はアクションを実行し、ステップ 3 と 4 はシェルスクリプトを実行します。ワークフローに必要な既成のアクションをもっと探すには、"Finding and customizing actions" を参照ください。
+この図では、先ほど作成したワークフローファイルと GitHub Actions のコンポーネントがどのように階層化されているのかを確認できます。各ステップは、ひとつのアクションあるいはシェルスクリプトを実行します。ステップ 1 と 2 はアクションを実行し、ステップ 3 と 4 はシェルスクリプトを実行します。ワークフローに必要な既成のアクションをもっと探すには、[Finding and customizing actions](https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions) を参照ください。
 
 ![visualizing_the_workflow_file](https://docs.github.com/assets/cb-33882/images/help/images/overview-actions-event.png)
 
