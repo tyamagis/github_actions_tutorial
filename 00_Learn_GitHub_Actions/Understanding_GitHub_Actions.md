@@ -1,9 +1,12 @@
 # Learn GitHub Actions
 
-CI ... Continuous Integration
-CD ... Continuous Delivery
 
 ## 1. Understanding GitHub Actions
+
+<sub>
+CI ... Continuous Integration
+CD ... Continuous Delivery
+</sub>
 ## 2. Finding and customizing actions
 ## 3. Essential features
 ## 4. Expressions
