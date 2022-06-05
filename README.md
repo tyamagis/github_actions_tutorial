@@ -7,7 +7,9 @@ for me and jp-lang reader.
 
 ## 処理を作成
 手順 1. `.github/workflows` ディレクトリをレポジトリ内に作成
+
 手順 2. `github-actions-demo.yml` を `.github/workflows` ディレクトリ内に作成
+
 手順 3. `github-actions-demo.yml` に以下の内容を記述
 
 ```yaml{:copy}
@@ -29,11 +31,15 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 ```
+
 手順 4. **Create a new branch for this commit and start a pull request** -> **Propose new file** をすることで push イベントが走り、YAML ファイルに記述した処理が実行される。
 
 ## 処理結果を見る
 
 手順 1. レポジトリ上部の Actions タブに移動
+
 手順 2. 作成した処理（Jobs）を選択
+
 手順 3. `Explore-GitHub-Actions` を選択
+
 手順 4. 処理が表示されるので詳細を確認したい処理を選んで確認
