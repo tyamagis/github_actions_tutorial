@@ -1,7 +1,7 @@
 # reference
 GitHub Actions Documentation - GitHub Docs (https://docs.github.com/en/actions)
 
-## guide [JP]
+## Creating your first workflow [JP]
 1. `.github/workflows` ディレクトリをレポジトリ内に作成
 2. `github-actions-demo.yml` を `.github/workflows` ディレクトリ内に作成
 3. `github-actions-demo.yml` に以下の内容を記述
