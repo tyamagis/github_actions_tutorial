@@ -3,6 +3,8 @@
 
 for me and jp-lang reader.
 
+# quickstart
+
 ## 処理を作成
 1. `.github/workflows` ディレクトリをレポジトリ内に作成
 2. `github-actions-demo.yml` を `.github/workflows` ディレクトリ内に作成
